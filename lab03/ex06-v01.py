@@ -67,5 +67,4 @@ def optimal_list(target_count, *lists):
 print(optimal_list(2, [1, 2], [5, 6], [1, 3])) # []
 print(optimal_list(2, [1, 2], [3, 5], [6, 5], [3, 2])) # [3, 5]
 print(optimal_list(3, [1, 2], [3, 5, 1], [3, 5, 2], [1, 2])) # [1, 2]
-
 print(optimal_list(2, [0, 1], [1, 2], [1, 3], [0, 1])) # [0, 1]
