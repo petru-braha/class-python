@@ -48,7 +48,7 @@ def optimal_list(target_count, *lists):
     # each value will store its containing input lists
     # hash_map[value] stores a tuple of:
     # - a list of input list indexes
-    #   - the frequency of the value is the length of this this
+    #   - the frequency of the value is the length of this list
     #   - the first element of the list is the first list in wich the element appeared
     #   - the second element - the second containing list and so on ...
     # - a (helper) dict pointing the input list index to the internal list index
@@ -64,7 +64,7 @@ def optimal_list(target_count, *lists):
 
       # update of the record
       list_indexes.append(index_input_list)
-      # observe that in index_list -> last element addeds
+      # observe that index_input_list == last element added
       frequency = len(list_indexes)
       dict_lists[index_input_list] = frequency - 1
 
@@ -78,3 +78,5 @@ def optimal_list(target_count, *lists):
 print(optimal_list(2, [1, 2], [5, 6], [1, 3])) # [1, 2]
 print(optimal_list(2, [1, 2], [3, 5], [6, 5], [3, 2])) # [3, 5]
 print(optimal_list(3, [1, 2], [3, 5, 1], [3, 5, 2], [1, 2])) # [1, 2]
+
+# do not consider first valid: 3 [1, 2] [2, 3] [2, 3]
